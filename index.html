@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Strike Rate Calculator</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.input-field {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#sub {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#res {
+  background-color: #6b706c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.result {
+  margin-top: 20px;
+}
+</style>
+<body>
+  <section class="main">
+    <div class="container">
+      <div class="input-box">
+        <div class="text">
+          <h1>Strike Rate Calculator</h1>
+        </div>
+        <div class="input-field">
+          <label for="runs">Runs</label>
+          <input type="number" id="runs" placeholder="Runs">
+        </div>
+        <div class="input-field">
+          <label for="balls">Balls</label>
+          <input type="number" id="balls" placeholder="Balls">
+        </div>
+        <button id="sub" type="submit">Submit</button>
+        
+<button id="res" onclick="location.reload()">Reset</button>
+    <div class="result">
+      <h3>Strike Rate : </h3>
+    </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+
+
+  <script>
+let runs = document.querySelector("#runs");
+let balls = document.querySelector("#balls");
+let submit = document.querySelector("#sub");
+let result = document.querySelector(".result");
+let clutter = "";
+var sr = 0;
+let hl = "Hello"
+submit.addEventListener("click", function(){
+  let rs = runs.value;
+  let bs = balls.value;
+  sr = (rs/bs)*100;
+  clutter = `  <h3>Strike Rate : ${sr} </h3>`
+  result.innerHTML = clutter;
+  
+});
+</script>
+</body>
+
+</html>
